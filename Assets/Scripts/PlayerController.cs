@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     
     public Text countText;
+    public Text dizzyTimer;
+    public Text speedBoostTimer;
     public Text winText;
     public float speed;
     private Rigidbody2D rb2d;
@@ -15,10 +17,13 @@ public class PlayerController : MonoBehaviour
     private bool activeBoost=false;
     private float timeDizzy=10;
     private bool activeDizzy=false;
+    
     void Start(){
         rb2d=GetComponent<Rigidbody2D>();
         count=0;
         winText.text="";
+        dizzyTimer.text = "";
+        speedBoostTimer.text = "";
         SetCountText();
     }
     void FixedUpdate(){
@@ -29,22 +34,26 @@ public class PlayerController : MonoBehaviour
         if(activeBoost){
             if(timeBoost>0){
                 timeBoost-= Time.deltaTime;
+                speedBoostTimer.text = "End of speed boost: " + System.Math.Round(timeBoost).ToString();
             }
             else{
                 speed=10;
                 activeBoost=false;
                 timeBoost=10;
+                speedBoostTimer.text = "";
             }
             
         }
         if(activeDizzy){
             if(timeDizzy>0){
                 timeDizzy-= Time.deltaTime;
+                dizzyTimer.text = "End of dizzy: " + System.Math.Round(timeDizzy).ToString();
             }
             else{
                 speed=-speed;
                 activeDizzy=false;
                 timeDizzy=10;
+                dizzyTimer.text = "";
             }
             
         }
@@ -65,6 +74,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             speed=speed*7;
             activeBoost=true;
+            
         }
         else if(other.gameObject.CompareTag("Saw")){            
             count=count-2;
