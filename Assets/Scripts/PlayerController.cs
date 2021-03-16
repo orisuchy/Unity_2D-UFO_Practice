@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
                 dizzyTimer.text = "End of dizzy: " + System.Math.Round(timeDizzy).ToString();
             }
             else{
-                speed=-speed;
+                speed = speed / 7;
                 activeDizzy=false;
                 timeDizzy=10;
                 dizzyTimer.text = "";
