@@ -650,7 +650,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571658853
 PrefabInstance:
@@ -948,6 +948,7 @@ GameObject:
   - component: {fileID: 787658401}
   - component: {fileID: 787658400}
   - component: {fileID: 787658405}
+  - component: {fileID: 787658406}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Saw
@@ -1084,6 +1085,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.05
+--- !u!114 &787658406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787658399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28baebf4818af744867b47b0a16a97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &899975976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1247,6 +1260,7 @@ GameObject:
   - component: {fileID: 1038555434}
   - component: {fileID: 1038555438}
   - component: {fileID: 1038555437}
+  - component: {fileID: 1038555439}
   m_Layer: 0
   m_Name: speedBoost
   m_TagString: SpeedBoost
@@ -1367,6 +1381,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!114 &1038555439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038555433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28baebf4818af744867b47b0a16a97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103783257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1956,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1974735246
 BoxCollider2D:
