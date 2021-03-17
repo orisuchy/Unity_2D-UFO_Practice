@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public int numOfPickups;
     public Text countText;
     public Text dizzyTimer;
     public Text speedBoostTimer;
     public Text winText;
     public float speed;
     private Rigidbody2D rb2d;
-    private int count;
+    private int score;
     private float timeBoost=10;
     private bool activeBoost=false;
     private float timeDizzy=10;
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     
     void Start(){
         rb2d=GetComponent<Rigidbody2D>();
-        count=0;
+        score=0;
         winText.text="";
         dizzyTimer.text = "";
         speedBoostTimer.text = "";
@@ -37,8 +37,8 @@ public class PlayerController : MonoBehaviour
                 speedBoostTimer.text = "End of speed boost: " + System.Math.Round(timeBoost).ToString();
             }
             else{
-                speed=10;
-                activeBoost=false;
+                speed /= 7;
+                activeBoost =false;
                 timeBoost=10;
                 speedBoostTimer.text = "";
             }
@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
                 dizzyTimer.text = "End of dizzy: " + System.Math.Round(timeDizzy).ToString();
             }
             else{
-                speed = speed / 7;
-                activeDizzy=false;
+                speed = -speed;
+                activeDizzy =false;
                 timeDizzy=10;
                 dizzyTimer.text = "";
             }
@@ -67,7 +67,8 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("PickUp")){
             other.gameObject.SetActive(false);
-            count++;
+            score++;
+            numOfPickups--;
             SetCountText();
         }
         else if(other.gameObject.CompareTag("SpeedBoost")){
@@ -77,7 +78,7 @@ public class PlayerController : MonoBehaviour
             
         }
         else if(other.gameObject.CompareTag("Saw")){            
-            count=count-2;
+            score=score-2;
             SetCountText();
             if(!activeDizzy){
                 speed=-speed;
@@ -88,9 +89,10 @@ public class PlayerController : MonoBehaviour
 
     }
     void SetCountText(){
-        countText.text="Count: "+count.ToString();
-        if(count>=11){
-            winText.text="You win!!";
+        countText.text="Score: "+score.ToString();
+        if(numOfPickups == 0)
+        {
+            winText.text="You won!!\nYour score is " + score.ToString();
         }
     }    
 }

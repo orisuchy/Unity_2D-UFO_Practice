@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 90093618}
   - component: {fileID: 90093617}
   m_Layer: 5
-  m_Name: CountText
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,8 +398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 90}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -91.9, y: 121.5}
+  m_SizeDelta: {x: 188.0794, y: 108.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &338376867
 MonoBehaviour:
@@ -892,6 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77b6a8ac1cd0f04ba0f5918c8f7439e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfPickups: 11
   countText: {fileID: 90093617}
   dizzyTimer: {fileID: 32391343}
   speedBoostTimer: {fileID: 1713716880}
@@ -1097,6 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28baebf4818af744867b47b0a16a97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveOption: 1
 --- !u!1001 &899975976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1348,7 +1350,7 @@ Transform:
   m_GameObject: {fileID: 1038555433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.28, y: -10.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1380,7 +1382,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.25
 --- !u!114 &1038555439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28baebf4818af744867b47b0a16a97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveOption: 0
 --- !u!1 &1103783257
 GameObject:
   m_ObjectHideFlags: 0

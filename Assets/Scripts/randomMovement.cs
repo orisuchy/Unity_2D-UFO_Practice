@@ -27,6 +27,7 @@ public class randomMovement : MonoBehaviour
     {
         if (isMoving)
         {
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, nextPos, Time.deltaTime * speed);
             if (gameObject.transform.position == nextPos) { isMoving = false; }
         }
         if (randomWaitingTime > 0 && !isMoving)
@@ -47,7 +48,7 @@ public class randomMovement : MonoBehaviour
             {
                 //gameObject.transform.position = Vector3.MoveTowards(transform.position, nextPos, Time.deltaTime * speed);
                 //gameObject.transform.position = Vector3.Lerp(transform.position, nextPos, 0.1f);
-                // isMoving = true;
+                isMoving = true;
             }
             randomWaitingTime = Random.Range(1, 10);
         }
