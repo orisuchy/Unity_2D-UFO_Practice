@@ -27,8 +27,8 @@ public class randomJumping : MonoBehaviour
         }
         else
         {
-            float nextX = Random.Range(-12.5f + objWidth, 12.5f - objWidth);
-            float nextY = Random.Range(-12.5f + objheight, 12.5f - objheight);
+            float nextX = Random.Range(-12.5f + objWidth/2, 12.5f - objWidth/2);
+            float nextY = Random.Range(-12.5f + objheight/2, 12.5f - objheight/2);
             Vector3 nextPos = new Vector3(nextX, nextY, 0);
 
             gameObject.transform.position = nextPos;
